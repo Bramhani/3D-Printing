@@ -1,0 +1,925 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{float}
+\usepackage{booktabs,array}
+\usepackage{graphicx} 
+\usepackage{url}
+\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={<pdf title here>}, pdfauthor={<author's name here>}, pdfsubject={<subject here>}, pdfkeywords={<keywords here>}]{hyperref}
+\begin{document}
+\begin{center}
+\Large \textbf {3D Printing}\\[0.5in]
+\small {\bf Technical Seminar Report}\vspace{0.5in}
+
+\small \emph{Submitted in partial fulfillment of\\
+        the requirements for the award of the degree of}
+        \vspace{.2in}
+
+       {\bf Bachelor of Technology \\in\\ Computer Science and Engineering}\\[0.5in]
+
+% Submitted by
+\normalsize Submitted by \\
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+Bramhani Mulugoju & (15SS1A0535) \\
+\end{tabular}
+\end{table}
+
+\vspace{.1in}
+Under the guidance of\\
+\vspace{.1in}
+\textbf{Dr. B. V. Ram Naresh Yadav}\\[0.2in]
+
+\vspace{.3in}
+
+% Bottom of the page
+\includegraphics[width=0.18\textwidth]{/home/bramhani/Desktop/latexFiles/clgLogo.png}\\[0.1in]
+\Large{Department of Computer Science and Engineering}\\
+\normalsize
+\textsc{JNTUH College of Engineering, Sultanpur}\\
+Sultanpur(V), Pulkal(M), Sangareddy district, Telangana --502273 \\
+\vspace{0.2cm}
+April 2019
+
+\end{center}
+\renewcommand\thepage{} %to remove page number
+%new page for certificate
+\newpage
+
+\begin{center}
+
+\begin{large}JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY \\ HYDERABAD COLLEGE OF ENGINEERING SULTHANPUR\\
+		Sultanpur,Pulkal(M),Sangareddy-502273,Telangana.\\
+\end{large}
+\includegraphics[width=0.18\textwidth]{/home/bramhani/Desktop/latexFiles/clgLogo.png}\\[0.1in]
+	 \noindent
+	 Department of Computer Sciences and Engineering \\
+\end{center} 
+
+\pagenumbering{roman}
+\addcontentsline{toc}{chapter}{Certificate}
+\pagenumbering{roman}
+\setcounter{page}{2}
+\begin{center}
+\emph{\LARGE Certificate}\\[1cm]
+\end{center}
+
+\begin{center}
+\begin{minipage}{33em}
+\noindent
+This is to certify that the Technical Seminar report work entitled "3D PRINTING" is a bonafide work carried out by  BRAMHANI MULUGOJU bearing Roll no.15SS1A0535 in partial fullfillment of the requirements of the degree of BACHELOR OF TECHNOLOGY in COMPUTER SCIENCE AND ENGINEERING discipline to Jawaharlal Nehru Technological University, Hyderabad during the academic year 2018-2019.\\ \par 
+
+\end{minipage}
+\end{center}
+
+\vspace{1.0in}
+% Bottom of the page
+\noindent
+\textbf{Seminar Guide}\hspace{2.1in}\textbf{Head of the Department}\\
+\hspace{0.3in}\textbf{Dr. B. V. Ram Naresh Yadav}\hspace{0.9in}\textbf{Sri. Joshi Shripad}\\
+\hspace{0.3in}\textbf{Associate Professor}\hspace{1.7in}	\textbf{Associate Professor}\\\\\\
+
+
+\newpage %declaration 
+\addcontentsline{toc}{chapter}{Declaration}
+\begin{center}
+\emph{\LARGE Declaration}\\[1cm]
+\end{center}
+\begin{center}
+\begin{minipage}{33em}
+I hereby declare that the Technical Seminar report entitled \textbf{``3D PRINTING''} is the work done by Bramhani Mulugoju bearing Roll no.15SS1A0535 and is submitted in the partial fulfilment of the requirements for the award of degree of Bachelor of Technology in Computer Science and Engineering from Jawaharlal Nehru Technological University Hyderabad College of Engineering Sultanpur.
+\end{minipage}
+\end{center}
+
+\vspace{2in}
+\begin{flushright}
+\textbf{	Bramhani Mulugoju \hspace{0.5in} (15SS1A0535)} \\
+\end{flushright}
+
+
+\newpage %acknowledgement
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\begin{center}
+\emph{\LARGE Acknowledgement}\\[1cm]
+\end{center}
+
+\textit{I would like to express my sincere gratitude to all those who helped in making of this seminar .}\\
+
+\textit{I express my sincere gratitude to Prof. B. Balu Naik, Principal, JNTUHCES and Prof. V. Venkateswara Reddy, Vice-Principal, JNTUHCES for their support during the course period.}\\
+
+\textit{I would like to express my heartfelt gratitude to Sri. Joshi Shripad, Associate Professor \& Head of Department, Dept. of Computer Science and Engineering, for his necessary help and valuable guidance, constant encouragement and creative suggestions on making this seminar.}\\
+
+\textit{I am grateful to Dr. B. V. Ram Naresh Yadav, Associate Professor, Department of CSE, for his support in the fulfilment of this seminar.}\\
+
+\textit{I wish to thank my friend Ms. R.Veenaeesh Kumari for her assistance with the statistics used	in this report.}\\
+
+\textit{Finally, I wish to thank my parents for their support and encouragement throughout my study.}\\
+
+\vspace{1in}
+\begin{flushright}
+	\textbf{Bramhani Mulugoju} \\  \textbf{(15SS1A0535)}
+\end{flushright}
+
+\newpage
+\addcontentsline{toc}{chapter}{Abstract}
+\begin{center}
+\emph{\LARGE Abstract}\\[1cm]
+\end{center}
+
+This report focuses on explaining the 3D Printing Technology.In this report we breifly explain the origin of the 3D Printing, Working along with the core consensus technology used for it And finally i conclude by showing the various applications.
+
+\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+%table of contents
+\tableofcontents{}
+
+\addtocontents{toc}{} 
+\clearpage
+\pagenumbering{arabic}
+
+		\chapter{Introduction}
+	\setlength{\parindent}{10ex} 
+	\indent 
+	\\3D printing or additive manufacturing (AM) is any of various processes for making a three-
+	dimensional object of almost any shape from a 3D model or other electronic data source primarily
+	through additive processes in which successive layers of material are laid down under computer
+	control [1] . A 3D printer is a type of industrial robot.\par
+	\indent	
+	\\Early AM equipment and materials were developed in the 1980s. In 1984, Chuck Hull of 3D
+	Systems Corp. invented a process known as stereolithography employing UV lasers to cure
+	photopolymers. Hull also developed the STL file format widely accepted by 3D printing software,
+	as well as the digital slicing and infill strategies common to many processes today. Also during the
+	1980s, the metal sintering forms of AM were being developed (such as selective laser sintering and
+	direct metal laser sintering), although they were not yet called 3D printing or AM at the time. In
+	1990, the plastic extrusion technology most widely associated with the term “3D printing” was
+	commercialized by Stratasys under the name fused deposition modelling (FDM). In 1995, Z
+	Corporation commercialized an MIT-developed additive process under the trademark 3D printing
+	(3DP), referring at that time to a proprietary process inkjet deposition of liquid binder on powder.\par
+	\indent
+	\\AM technologies found applications starting in the 1980s in product development, data
+	visualization, rapid prototyping, and specialized manufacturing. Their expansion into production
+	(job production, mass production, and distributed manufacturing) has been under development in
+	the decades since. Industrial production roles within the metalworking industries achieved
+	significant scale for the first time in the early 2010s. Since the start of the 21st century there has
+	been a large growth in the sales of AM machines, and their price has dropped substantially.
+	According to Wohlers Associates, a consultancy, the market for 3D printers and services was worth
+	2.2 billion dollars worldwide in 2012, up 29 percent from 2011. Applications are many, including architecture,
+	construction (AEC), industrial design, automotive, aerospace, military, engineering, dental and
+	medical industries, biotech (human tissue replacement), fashion, footwear, jewellery, eyewear,
+	education, geographic information systems, food, and many other fields.\par
+	\chapter{3D-Printer}
+	\indent
+	\\3D-Printer is a machine reminiscent of the Star Trek Replicator, something magical that can
+	create objects out of thin air. It can “print” in plastic, metal, nylon, and over a hundred other
+	materials. It can be used for making nonsensical little models like the over-printed Yoda, yet it can
+	also print manufacturing prototypes, end user products, quasi-legal guns, aircraft engine parts and
+	even human organs using a person’s own cells. We live in an age that is witness to what many are
+	calling the Third Industrial Revolution [2] . 3D printing, more professionally called additive
+	manufacturing, moves us away from the Henry Ford era mass production line, and will bring us to a
+	new reality of customizable, one-off production.\par
+	\indent
+	\\3D printers use a variety of very different types of additive manufacturing technologies, but
+	they all share one core thing in common: they create a three dimensional object by building it layer
+	by successive layer, until the entire object is complete. Each of these printed layers is a thinly-
+	sliced, horizontal cross-section of the eventual object. Imagine a multi-layer cake, with the baker
+	laying down each layer one at a time until the entire cake is formed. 3D printing is somewhat
+	similar, but just a bit more precise than 3D baking.\par
+	\indent
+	\\In the 2D world, a sheet of printed paper output from a printer was “designed” on the
+	computer in a program such as Microsoft Word. The file - the Word document which contains the
+	instructions that tell the printer what to do.\par
+
+	
+	\chapter{Architecture}
+	\setlength{\parindent}{10ex} 
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s2.png}
+		\label{fig:Structure of 3D Printer}
+		\caption{Structure of 3D Printer}
+	\end{figure}
+	\indent
+	\\The picture fig. 3.2 shows the structure of a typical 3D printer. The print table is the platform
+	where the objects for printing has been situated. It provides the basic support for manufacturing
+	objects layer by layer. The extruder is the most important part of a 3D-Printer. As the extruders in
+	the normal paper printers, this extruder is also used to pour ink for printing. The movement of
+	extruder in various dimensions create the 3D print. For printing a 3d object, the extruder has to
+	access X, Y and Z coordinates. For achieving this, many techniques are used according to the
+	printer specification is required for various applications.\par
+	
+	\indent
+	\\If the 3D-Printer is a desktop printer, the Z axis movement of the extruder can be avoided and that
+	function can be transferred to the print table. This will avoid complexity in 3D printing as well as
+	time consumption.\par
+	
+	\indent
+	\\When the STL file is input to the printer, the microcontroller extracts each layer from it and
+	also extracts each line segment from each layer. Then it gives controls to the movement of the
+	extruder at required rate. The X-direction movement of extruder is made possible by the X-motor.
+	When the X motor rotates, the shaft also rotates and the extruder moves in X direction. The Y-
+	direction movement of extruder is made possible by the Y-motor. When the Y motor rotates, the
+	shaft also rotates and the extruder moves in Y direction. The X direction movement is made by the
+	print table. In the case of desktop printers, the printing ink is usually plastic wire that has been
+	melted by the extruder at the time of printing. While printing, the plastic wire will melt and when it
+	fall down to the printing table.\par
+		\noindent
+	\\The Below figure shows the block diagram of the architecture:
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s1.png}
+		\label{fig:Block Diagram of Architecture}
+		\caption{Block Diagram of Architecture}
+	\end{figure}
+	
+	\indent
+	\\Consider printing larger objects like house using 3D printer. There will not be any X motor or
+	Y motor in that case. An extruder which can pour concrete mix is fixed on the tip of a crane. The
+	crane is programmed for the movement of extruder in X, Y and Z axis. The concept and structure of
+	3d printer changes according to the type, size, accuracy and material of the object that has to be
+	printed. Generalizing the facts, the extruder need to access all the 3 coordinates in space to print and
+	object. The method used for that doesn’t matters much.\par
+	
+	\chapter{Additive Manufacturing}
+	\setlength{\parindent}{10ex} 
+	
+	\indent
+	\\Additive manufacturing is a truly disruptive technology exploding on the manufacturing scene
+	as leading companies are transitioning from “analog” to “digital” manufacturing [4] . Additive
+	manufacturing uses three dimensional printing to transform engineering design files into fully
+	functional and durable objects created from sand, metal and glass. The technology creates products
+	layer by layer after a layer’s particles are bound by heat or chemicals the next layer is added and the
+	binding process is repeated. It enables geometries not previously possible to be manufactured. Full-
+	form parts are made directly from computer-aided design (CAD) data for a variety of industrial,
+	commercial and art applications. Manufacturers across several industries are using this digital
+	manufacturing process to produce a range of products, including: engine components for
+	automotive applications, impellers and blades for aerospace use, pattern less sand moulds for pumps
+	used in the oil and energy industry, and medical prosthetics which require easily adaptable design
+	modifications.\par
+	
+	\indent
+	\\This advanced manufacturing process starts with a CAD file that conveys information about
+	how the finished product is supposed to look. The CAD file is then sent to a specialized printer
+	where the product is created by the repeated laying of finely powdered material (including sand,
+	metal and glass) and binder to gradually build the finished product. Since it works in a similar
+	fashion to an office printer laying ink on paper, this process is often referred to as 3D printing. The
+	3D printers can create a vast range of products, including parts for use in airplanes and automobiles,
+	to replacing aging or broken industrial equipment, or for precise components for medical needs.\par
+	
+	\indent
+	\\There are tremendous cost advantages to using additive manufacturing. There is little to no
+	waste creating objects through additive manufacturing, as they are precisely built by adding
+	material layer by layer. In traditional manufacturing, objects are created in a subtractive manner as
+	metals are trimmed and shaped to fit together properly. This process creates substantial waste that
+	can be harmful to the environment. Additive manufacturing is a very energy efficient and
+	environmentally friendly manufacturing option.\par
+	
+	\indent
+	\\Additive manufacturing swiftly creates product prototypes an increasingly critical function
+	that significantly reduces the traditional trial-and-error process so new products can enter the
+	market more quickly. Likewise, it can promptly create unique or specialized metal products that can
+	replace worn or broken industrial parts. That means companies can avoid costly shut downs and
+	drastically compress the time it takes to machine a replacement part.\par
+	
+	\indent
+	\\With additive manufacturing, once a CAD drawing is created the replacement part can be
+	printed. Storage of bulky patterns and tooling is virtually eliminated. Major global companies,
+	including Ford, Sikorsky and Caterpillar, have recognized that additive manufacturing can
+	significantly reduce costs while offering design freedoms not previously possible. They have begun
+	to implement the technology into their manufacturing processes. Additive manufacturing has robust
+	market capabilities ranging from aerospace to automotive to energy, and it is not uncommon to find
+	3D printers in use at metal-working factories and in foundries alongside milling machines, presses
+	and plastic injection moulding equipment.\par
+	
+	
+	\indent
+	\\Companies that use additive manufacturing reduce costs, lower the risk of trial and error, and
+	create opportunities for design innovation. A serious limitation of subtractive manufacturing is that
+	part designs are often severely comprised to accommodate the constraints of the subtractive process.\par
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s3.png}
+		\label{fig:Example of Additive Manufacturing}
+		\caption{Example of Additive Manufacturing}
+	\end{figure}
+	
+	
+	\indent
+	\\The fig. 4.1 shows the additive manufacturing enables both the design and the materialization
+	of objects by eliminating traditional manufacturing constraints.\par
+	
+	
+	\indent
+	\\A large number of additive processes are now available. They differ in the way layers are
+	deposited to create parts and in the materials that can be used. Some methods melt or soften
+	material to produce the layers [5] , e.g. selective laser melting (SLM) or direct metal laser sintering
+	(DMLS), selective laser sintering (SLS), fused deposition modelling (FDM), while others cure
+	liquid materials using different sophisticated technologies, e.g. stereolithography (SLA). With
+	laminated object manufacturing (LOM), thin layers are cut to shape and joined together (e.g. paper,
+	polymer and metal). Each method has its own advantages and drawbacks, and some companies
+	consequently offer a choice between powder and polymer for the material from which the object is
+	built. Some companies use standard, off-the-shelf business paper as the build material to produce a
+	durable prototype.\par
+	
+	\section{Extrusion Deposition}	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s4.png}
+		\label{fig:Basic Method of FDM Technology}
+		\caption{Basic Method of FDM Technology}
+	\end{figure}
+	
+	\noindent 
+	\\In extrusion deposition, Fused Deposition technique is used. Fig. 4.2 Fused Deposition
+	Modelling (FDM) was developed by Stratasys in Eden Prairie, Minnesota. In this process, a plastic
+	or wax material is extruded through a nozzle that traces the part's cross sectional geometry layer by
+	layer. The build material is usually supplied in filament form, but some setups utilize plastic pellets
+	fed from a hopper instead. The nozzle contains resistive heaters that keep the plastic at a
+	temperature just above its melting point so that it flows easily through the nozzle and forms the
+	layer. The plastic hardens immediately after flowing from the nozzle and bonds to the layer below.
+	Once a layer is built, the platform lowers, and the extrusion nozzle deposits another layer. The layer
+	thickness and vertical dimensional accuracy is determined by the extruder die diameter, which
+	ranges from 0.013 to 0.005 inches. In the X-Y plane, 0.001 inch resolution is achievable. A range of
+	materials are available including ABS, polyamide, polycarbonate, polyethylene, polypropylene, and
+	investment casting wax.\par
+	
+	\section{Granular Material Binding}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s5.png}
+		\label{fig:Granular Material Binding}
+		\caption{Granular Material Binding}
+	\end{figure}
+	\indent
+	\\Another 3D printing approach is the selective fusing of materials in a granular bed. The fig.
+	4.3 shows the technique fuses parts of the layer, and then moves the working area downwards,
+	adding another layer of granules and repeating the process until the piece has built up. This process
+	uses the unfused media to support overhangs and thin walls in the part being produced, which
+	reduces the need for temporary auxiliary supports for the piece. A laser is typically used to sinter
+	the media into a solid. Examples include selective laser sintering (SLS), with both metals and
+	polymers (e.g. PA, PA-GF, Rigid GF, PEEK, PS, Alumide, Carbonmide, elastomers), and direct
+	metal laser sintering (DMLS). Selective Laser Melting (SLM) does not use sintering for the fusion
+	of powder granules but will completely melt the powder using a high-energy laser to create fully
+	dense materials in a layer wise method with similar mechanical properties to conventional
+	manufactured metals. Electron (EBM) is a similar type of additive manufacturing technology for
+	metal parts (e.g. titanium alloys). EBM manufactures parts by melting metal powder layer by layer
+	with an electron beam in a high vacuum. Unlike metal sintering techniques that operate below
+	melting point, EBM parts are fully dense, void-free, and very strong. Another method consists of an
+	inkjet 3D printing system. The printer creates the model one layer at a time by spreading a layer of
+	powder (plaster, or resins) and printing a binder in the cross-section of the part using an inkjet-like
+	process. The strength of bonded powder prints can be enhanced with wax or thermoset polymer
+	impregnation.\par
+	\section{Photopolymerisation}
+	
+	\indent
+	\\Stereolithography was patented in 1986 by Chuck Hull. Photopolymerization is primarily
+	used in stereolithography (SLA) to produce a solid part from a liquid. This process dramatically
+	redefined previous efforts, from the "photosculpture" method of Francois Willeme (1830–1905) in
+	1860 (which consisted of photographing a subject from a variety of angles (but all at the same
+	distance from the subject) and then projecting each photograph onto a screen, whence a pantograph
+	was used to trace the outline onto modelling clay) through the photopolymerisation of Mitsubishi's
+	Matsubara in 1974.\par
+	
+	
+	\indent
+	\\In photopolymerisation, a vat of liquid polymer is exposed to control lighting under safelight
+	conditions. The exposed liquid polymer hardens. The build plate then moves down in small
+	increments and the liquid polymer is again exposed to light. The process repeats until the model has
+	been built. The liquid polymer is then drained from the vat, leaving the solid model. The
+	EnvisionTEC Perfactory is an example of a DLP rapid prototyping system.\par
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s6.png}
+		\label{fig:Photopolymerisation}
+		\caption{Photopolymerisation}
+	\end{figure}
+	
+	\indent
+	\\Inkjet printer systems like the Objet PolyJet system spray photopolymer materials onto a
+	build tray in ultra-thin layers between 16 and 30 micro meter until the part is completed. Each
+	photopolymer layer is cured with UV light after it is jetted, producing fully cured models that can
+	be handled and used immediately, without post-curing. The gel-like support material, which is
+	designed to support complicated geometries, is removed by hand and water jetting. It is also
+	suitable for elastomers.\par
+	
+	\indent
+	\\Ultra-small features can be made with the 3D micro fabrication technique used in multiphoton
+	photopolymerisation. This approach traces the desired 3D object in a block of gel using a focused
+	laser. Due to the nonlinear nature of photo excitation, the gel is cured to a solid only in the places
+	where the laser was focused and the remaining gel is then washed away.\par
+	
+	
+	\indent
+	\\Feature sizes of under 100 nm are easily produced, as well as complex structures with moving
+	and interlocked parts.\par
+	
+	\section{Lamination}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s7.png}
+		\label{fig:Lamination Process}
+		\caption{Lamination Process}
+	\end{figure}
+	
+	
+	\indent
+	\\Laminated Object Manufacturing works by layering sheets of material on top of one- another,
+	binding them together using glue. The printer then slices an outline of the object into that cross
+	section to be removed from the surrounding excess material later. Repeating this process builds up
+	the object one layer at a time. Objects printed using LOM are accurate, strong, and durable and
+	generally show no distortion over time which makes them suitable for all stages of the design cycle.
+	They can even be additionally modified by machining or drilling after printing. Typical layer
+	resolution for this process is defined by the material feedstock and usually ranges in thickness from
+	one to a few sheets of copy paper. Mcor’s version of the technology makes LOM one of the few 3D
+	printing processes that can produce prints in full colour.\par
+	
+	
+	\indent
+	\\		•Low cost due to readily available raw material.\\
+	•Paper models have wood like characteristics, and may be worked and finished accordingly.\\
+	•Dimensional accuracy is slightly less than that of stereolithography and selective laser
+	sintering but no milling step is necessary.\\
+	
+	\par
+	
+	\chapter{Procedures for Printing}
+	\setlength{\parindent}{10ex} 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s8.png}
+		\label{fig:Printing Procedures}
+		\caption{Printing Procedures}
+	\end{figure}
+	\indent
+	\\There are some procedures for printing. First you must create a computer model for printing
+	the object. For creating that, you can use Computer Aided Design Software like AutoCAD, 3DS
+	Max etc. After the object file is created, the file need to be modified. The object file contains
+	numerous amount of curves. Curves cannot be printed by the printer directly. The curves has to be
+	converted to STL (Stereo lithography) file format. The STL file format conversion removes all the
+	curves and it is replaced with linear shapes. Then the file need to be sliced into layer by layer. The
+	layer thickness is so chosen to meet the resolution of the 3D printer we are using. If you are unable
+	to draw objects in CAD software, there are many websites available which are hosted by the 3D
+	printing companies to ease the creation of 3D object. The sliced file is processed and generates the
+	special coordinates. These coordinates can be processed by a controller to generate required signal
+	to the motor for driving extruder. This layer by layer process generate a complete object.\par
+	\section{Designing using CAD}
+	\indent
+	\\Computer-aided design (CAD) is the use of computer systems to assist in the creation,
+	modification, analysis, or optimization of a design. CAD software is used to increase the
+	productivity of the designer, improve the quality of design, improve communications through
+	documentation, and to create a database for manufacturing. CAD output is often in the form of
+	electronic files for print, machining, or other manufacturing operations.\par
+	\indent
+	\\CAD software for mechanical design uses either vector-based graphics to depict the objects of
+	traditional drafting, or may also produce raster graphics showing the overall appearance of designed
+	objects. However, it involves more than just shapes. As in the manual drafting of technical and
+	engineering drawings, the output of CAD must convey information, such as materials, processes,
+	dimensions, and tolerances, according to application- specific conventions.\par
+	\indent
+	\\CAD may be used to design curves and figures in two-dimensional (2D) space; or curves,
+	surfaces, and solids in three-dimensional (3D) space. CAD is an important industrial art extensively
+	used in many applications, including automotive, shipbuilding, and aerospace industries, industrial
+	and architectural design, prosthetics, and many more. CAD is also widely used to produce computer
+	animation for special effects in movies, advertising and technical manuals, often called DCC digital
+	content creation. The modern ubiquity and power of computers means that even perfume bottles
+	and shampoo dispensers are designed using techniques unheard of by engineers of the 1960s.
+	Because of its enormous economic importance, CAD has been a major driving force for research in
+	computational geometry, computer graphics (both hardware and software), and discrete differential
+	geometry.\par
+	\indent
+	\\The design of geometric models for object shapes, in particular, is occasionally called
+	computer-aided geometric design (CAGD). Unexpected capabilities of these associative
+	relationships have led to a new form of prototyping called digital prototyping. In contrast to
+	physical prototypes, which entail manufacturing time in the design. That said, CAD models can be
+	generated by a computer after the physical prototype has been scanned using an industrial CT
+	scanning machine. Depending on the nature of the business, digital or physical prototypes can be
+	initially chosen according to specific needs. Today, CAD systems exist for all the major platforms
+	(Windows, Linux, UNIX and Mac OS X); some packages even support multiple platforms which
+	enhances the capabilities of 3D printing into a new level.\par
+	\section{Conversion to STL File Format}
+	\indent
+	\\An STL file is a triangular representation of a 3D surface geometry. The surface is tessellated
+	logically into a set of oriented triangles (facets). Each facet is described by the unit outward normal
+	and three points listed in counterclockwise order representing the vertices of the triangle. While the
+	aspect ratio and orientation of individual facets is governed by the surface curvature, the size of the
+	facets is driven by the tolerance controlling the quality of the surface representation in terms of the
+	distance of the facets from the surface. The choice of the tolerance is strongly dependent on the
+	target application of the produced STL file.\par
+	\indent
+	\\In industrial processing, where stereolithography machines perform a computer controlled
+	layer by layer laser curing of a photo-sensitive resin, the tolerance may be in order of 0.1 mm to
+	make the produced 3D part precise with highly worked out details. However much larger values are
+	typically used in pre-production STL prototypes, for example for visualization purposes.\par
+	\indent
+	\\However, for non-native STL applications, the STL format can be generalized. The normal, if
+	not specified (three zeroes might be used instead), can be easily computed from the coordinates of
+	the vertices using the right-hand rule. Moreover, the vertices can be located in any octant. And
+	finally, the facet can even be on the interface between two objects (or two parts of the same object).
+	This makes the generalized STL format suitable for modelling of 3D non-manifolds objects.\par
+	\section{Choosing Printing inks}
+	\indent
+	\\Printing inks are chosen according to the need and kind of object that has to print. Different
+	types of inks are available according to the size, type, resolution and function of the object.\par
+	\indent
+	\\\texttt{COLLOIDAL INKS}: Three-dimensional periodic structures fabricated from colloidal “building
+	blocks” may find widespread technological application as advanced ceramics, sensors, composites
+	and tissue engineering scaffolds. These applications require both functional materials, such as those
+	exhibiting Ferro electricity, high strength, or biocompatibility, and periodicity engineered at length
+	scales (approximately several micrometers to millimeters) far exceeding colloidal dimensions.
+	Colloidal inks developed for robotic deposition of 3-D periodic structures. These inks are also
+	called general purpose inks.\\
+	\texttt{FUGITIVE INK}: These types of inks are used for creating soft devices. The type of ink is capable
+	for self-organizing which results in self regenerative devices.\\
+	\texttt{NANOPARTICLE INK}: The object that has to be printed sometimes need conductor for its
+	function. For printing conductors, special types of inks called Nanoparticle inks are used.\\
+	\texttt{POLYELECTROLYTE INK}: Polyelectrolyte complexes exhibit a rich phase behavior that
+	depends on several factors, including the polyelectrolyte type and architecture, their individual
+	molecular weight and molecular weight ratio, the polymer concentration and mixing ratio, the ionic
+	strength and pH of the solution, and the mixing conditions. So such inks are used for creating
+	sensors, transducers etc.\\
+	\texttt{SOL-GEL INK}: In this chemical procedure, the 'sol' (or solution) gradually evolves towards the
+	formation of a gel-like diphasic system containing both a liquid phase and solid phase whose
+	morphologies range from discrete particles to continuous polymer networks. In the case of the
+	colloid, the volume fraction of particles (or particle density) may be so low that a significant
+	amount of fluid may need to be removed initially for the gel-like properties to be recognized. These
+	inks are very useful in creating power supply modules in the printed object.\par
+	\chapter{Applications}
+	
+	\indent
+	\\Three-dimensional printing makes it as cheap to create single items as it is to produce
+	thousands and thus undermines economies of scale. It may have as profound an impact on the world
+	as the coming of the factory. Just as nobody could have predicted the impact of the steam engine in
+	1750 or the printing press in 1450, or the transistor in 1950 . It is impossible to foresee the long-
+	term impact of 3D printing. But the technology is coming, and it is likely to disrupt every field it
+	touches. Additive manufacturing's earliest applications have been on the tool room end of the
+	manufacturing spectrum. For example, rapid prototyping was one of the earliest additive variants,
+	and its mission was to reduce the lead time and cost of developing prototypes of new parts and
+	devices, which was earlier only done with subtractive tool room methods (typically slowly and
+	expensively). With technological advances in additive manufacturing, however, and the
+	dissemination of those advances into the business world, additive methods are moving ever further
+	into the production end of manufacturing in creative and sometimes unexpected ways. Parts that
+	were formerly the sole province of subtractive methods can now in some cases be made more
+	profitably via additive ones. Standard applications include design visualization, prototyping/CAD,
+	metal casting, architecture, education, geospatial, healthcare, and entertainment/retail. 3D printer
+	came with immense number of applications. All the traditional methods of printing causes wastage
+	of resources. But 3D printer only uses the exact amount of material for printing. This enhances the
+	efficiency. If the material is very costly, 3d printing techniques can be used to reduce the wastage of
+	material.\par
+	\indent
+	\\Consider printing of a complex geometry like combustion chamber of a rocket engine. The
+	3D printing will enhances the strength and accuracy of the object. Conventional methods uses parts
+	by parts alignment. This will cause weak points in structures. But in the case of 3D printed object,
+	the whole structure is a single piece.\par
+	\indent
+	\\3D printer has numerous application in every field [7] it touches. Since it is a product
+	development device, rate of production, customization and prototyping capabilities need to be
+	considered. Some of the 3D product as follows.\par
+	\section{Rapid Prototyping}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s9.png}
+		\label{fig:Rapid prototyping}
+		\caption{Rapid prototyping}
+	\end{figure}
+	\indent
+	\\Rapid prototyping is a group of techniques used to quickly fabricate a scale model of a
+	physical part or assembly using three-dimensional computer aided design (CAD) data. Construction
+	of the part or assembly is usually done using 3D printing or "additive layer manufacturing"
+	technology.\par
+	\indent
+	\\The first methods for rapid prototyping became available in the late 1980s and were used to
+	produce models and prototype parts. Today, they are used for a wide range ofapplications and are
+	used to manufacture production-quality parts in relatively small numbers if desired without the
+	typical unfavourable short-run economics. This economy has encouraged online service bureaus.
+	Historical surveys of RP technology start with discussions of simulacra production techniques used
+	by 19th-century sculptors. Some modern sculptors use the progeny technology to produce
+	exhibitions.\par
+	\indent
+	\\The ability to reproduce designs from a dataset has given rise to issues of rights, as it is now
+	possible to interpolate volumetric data from one-dimensional images. As with CNC subtractive
+	methods, the computer aided design-computer aided manufacturing CAD-CAM workflow in the
+	traditional Rapid Prototyping process starts with the creation of geometric data, either as a 3D solid
+	using a CAD workstation, or 2D slices using a scanning device. For RP this data must represent a
+	valid geometric model; namely, one whose boundary surfaces enclose a finite volume, contain no
+	holes exposing the interior, and do not fold back on themselves. In other words, the object must
+	have an “inside.”\par
+	
+	\indent
+	\\The model is valid if for each point in 3D space the computer can determine uniquely whether
+	that point lies inside, or outside the boundary surface of the model. CAD post-processors will
+	approximate the application vendors’ internal CAD geometric forms (e.g., B-splines) with a
+	simplified mathematical form, which in turn is expressed in a specified data format which is a
+	common feature in Additive Manufacturing: STL (stereolithography) a standard for transferring
+	solid geometric models to SFF machines. To obtain the necessary motion control trajectories to
+	drive the actual SFF, Rapid Prototyping, 3D Printing or Additive Manufacturing mechanism.\par
+	\section{Mass Customization}
+	
+	\indent
+	\\Mass customization, in marketing, manufacturing, call centers and management, is the use of
+	flexible computer-aided manufacturing systems to produce custom output. Those systems combine
+	the low unit costs of mass production processes with the flexibility of individual customization.\par
+	\indent
+	\\Mass customization is the new frontier in business competition for both manufacturing and
+	service industries. At its core is a tremendous increase in variety and customization without a
+	corresponding increase in costs. At its limit, it is the mass production of individually customized
+	goods and services. At its best, it provides strategic advantage and economic value.\par
+	\indent
+	\\Mass customization is the method of "effectively postponing the task of differentiating a
+	product for a specific customer until the latest possible point in the supply network." (Chase, Jacobs
+	abd Aquilano 2006, p. 419). Kamis, Koufaris and Stern (2008) conducted experiments to test the
+	impacts of mass customization when postponed to the stage of retail, online shopping.\par
+	\indent
+	\\They found that users perceive greater usefulness and enjoyment with a mass customization
+	interface vs. a more typical shopping interface, particularly in a task of moderate complexity.
+	From collaborative engineering perspective, mass customization can be viewed as
+	collaborative efforts between customers and manufacturers, who have different sets of priorities and
+	need to jointly search for solutions that best match customers’ individual specific needs with
+	manufacturers’ customization capabilities (Chen, Wang and Tseng (2009)).\par
+	\indent
+	\\With the arrival of 3D printer, we are able to customize any products we want. Consider you
+	are in a shop to buy a spectacle. The only choice you have is to select a model from the shop. If you
+	didn’t like any model, you will probably go to another shop. By the implementation of 3d printed
+	spectacles, you are provided with power for creating any spectacle in the world with just the CAD
+	model. Many implementations of mass customization are operational today, such as software-based
+	product configurators that make it possible to add and/or change functionalities of a core product or
+	to build fully custom enclosures from scratch.\par
+	\section{Automobiles}
+	
+	\indent
+	\\In early 2014, the Swedish supercar manufacturer, Koenigsegg, announced the ‘One:1’, a
+	supercar that utilises many components that were 3D printed. In the limited run of vehicles
+	Koenigsegg produces, the ‘One:1’ has side-mirror internals, air ducts, titanium exhaust components,
+	and even complete turbocharger assembles that have been 3D printed as part of the manufacturing
+	process\par
+		\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s10.png}
+		\label{fig:CAD Model of 3D Printed motor bike}
+		\caption{CAD Model of 3D Printed motor bike}
+	\end{figure}
+	\indent
+	\\An American company, Local Motors is working with Oak Ridge National Laboratory and
+	Cincinnati Incorporated to develop large scale additive manufacturing processes suitable for
+	printing an entire car body. The company plans to print the vehicle live in front of an audience in
+	September 2014 at the International Manufacturing Technology Show. Produced from a new fibre-
+	reinforced thermoplastic strong enough for use in an automotive application, the chassis and body
+	without drivetrain, wheels and brakes weighs ascant 450 pounds and the completed car is comprised
+	of just 40 components, a number that gets smaller with every revision.\par
+	
+
+	\indent
+	\\Fig.6.2 shows the 3D CAD model of a bike, actually of a 3D printed scale created by replica
+	designer Jacky Wan from Redicubricks. The 3D printed bike is made of over 40 individual pieces
+	and Wan details his print and build process over on Ultimakers blog. He even includes a link to his
+	3D files so you can build one yourself if you think you’re up to it. The project is certainly not for
+	beginners. When designing the bike replica, Wan imposed several goals on himself; He wanted to
+	maintain the external looks of the bike, all parts needed to snap fit together to make gluing easier,
+	keep seams and striation to a minimum and everything needed to print on his Ultimaker: Original.
+	Of course 3D printing a realistic motorcycle replica wasn’t going to make it easy for him to meet to
+	those goals.\par
+	\section{Wearables}
+	
+	\indent
+	\\San Francisco-based clothing company, Continuum is among the first to create wearable, 3D
+	printed pieces. Customers design bikinis on Continuum’s website, specifying their body shapes and
+	measurements. The company then uses nylon to print out each unique order. Founder Mary Huang
+	believes that this intersection of fashion and technology will be the future because it “gives
+	everyone access to creativity.”\par
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s11.png}
+		\label{fig:3D Printed Foot Wear}
+		\caption{3D Printed Foot Wear}
+	\end{figure}
+	\indent
+	\\This year, architect Francis Bitonti and fashion designer Michael Schmidt collaborated to
+	make a dress for burlesque diva Dita Von Teese. She wore the garment to the Ace Hotel in March
+	for a convention hosted by online 3D printing marketplace, Shapeways. The dress consists of 2,500
+	intersecting joint pieces that were linked together by hand. The finishing touches a black lacquer
+	coating and 12,000 hand-placed Swarovski crystals reflect Schmidt’s iconic glam that attracts a
+	clientele of Madonna, Rihanna, Lady Gaga, and the like. British designer Catherine Wales is
+	making moves too. She is best known for her Project DNA collection, which includes avant-garde
+	3D printed masks, accessories, and apparel, all printed with white nylon. The eccentric shapes of
+	her garments reflect that 3D printed clothing is still in its early stages. Today, the materials and
+	technologies used for 3D printing still dictate and affect garment design.\par
+	\indent
+	\\Dutch designer Iris Van Herpen has already put this new material to the test in her Voltage
+	Haute Couture collection, which raised eyebrows at Paris Fashion Week in January 2013. A
+	frontrunner in the realm of futuristic fashion design, Van Herpen has been taking her 3D printed
+	dresses and shoes to the runways since 2010. Still, she admits that there are challenges associated
+	with incorporating a new medium into the manufacturing process. “I always work together with an
+	architect because I am not good with the 3D programs myself,” she said.\par
+	\indent
+	\\The idea of custom design has mass appeal and marketability. Who doesn’t want to wear a
+	one-of-a-kind, perfectly tailored piece? Perhaps the teenage girl of the future won’t have to suffer
+	the social agony of showing up to a school dance wearing the same dress as her archenemy.\par
+	
+	\chapter{Advantages and Disadvantages}
+	
+	\noindent
+	\\The following are the advantages for 3D-Printing:\par
+	\indent
+	\\1. Create anything with great geometrical complexity.\\
+	2. Ability to personalize every product with individual customer needs.
+	Produce products which involve great level of complexity that simply could not be
+	produced physically in any other way.\\
+	3. Additive manufacturing can eliminate the need for tool production and therefore
+	reduce the costs, lead time and labour associated with it.\\
+	4. Lighter and stronger products can be printed.\\
+	5. Increased operating life for the products.\\
+	6. Production has been brought closer to the end user or consumer.\\
+	7. Spare parts can be printed on site which will eliminate shipping cost.\\
+	8. 3D printing can create new industries and completely new professions.\\
+	9. Printing 3D organs can revolutionarise the medical industry.\\
+	10. 3D printing is an energy efficient technology.\\
+	11. Wider adoption of 3D printing would likely cause re-invention of a number of already
+	invented products.\\
+	12. Rapid prototyping causes faster product development.\\
+	13Additive Manufacturing use up to 90percent of standard materials and therefore creating
+	less waste.\\
+	\par
+	
+	\noindent
+	\\The following are the disadvantages for 3D-Printing:\par
+	\noindent
+	1. Since the technology is new, limited materials are available for printing.\\
+	2. Consumes more time for less complicated pats.\\
+	3. Size of printable object is limited by the movement of extruder.\\
+	4. In additive manufacturing previous layer has to harden before creating.
+	
+	\par
+	\chapter{Future Scope}
+	\noindent
+	\\NASA engineers are 3-D printing parts, which are structurally stronger and more reliable than
+	conventionally crafted parts, for its space launch system. The Mars Rover comprises some 70 3-D-
+	printed custom parts. Scientists are also exploring the use of 3-D printers at the International Space
+	Station to make spare parts on the spot. What once was the province of science fiction has now
+	become a reality [6] .\par
+	\noindent
+	\\
+	Medicine is perhaps one of the most exciting areas of application. Beyond the use of 3-D
+	printing in producing prosthetics and hearing aids, it is being deployed to treat challenging medical
+	conditions, and to advance medical research, including in the area of regenerative medicine. The
+	breakthroughs in this area are rapid and awe-inspiring. Whether or not they arrive en-mass in the
+	home, 3D printers have many promising areas of potential future application. They may, for
+	example, be used to output spare parts for all manner of products, and which could not possibly be
+	stocked as part of the inventory of even the best physical store.\par
+	
+	\noindent
+	\\Hence, rather than throwing away a broken item (something unlikely to be justified a decade
+	or two hence due to resource depletion and enforced recycling), faulty goods will be able to be
+	taken to a local facility that will call up the appropriate spare parts online and simply print them out.
+	NASA has already tested a 3D printer on the International Space Station, and recently announced its
+	requirement for a high resolution 3D printer to produce spacecraft parts during deep space missions.
+	The US Army has also experimented with a truck-mounted 3D printer capable of outputting spare
+	tank and other vehicle components in the battlefield.\par
+	
+	\noindent
+	\\As noted above, 3D printers may also be used to make future buildings. To this end, a team at
+	Loughborough University is working on a 3D concrete printing project that could allow large
+	building components to be 3D printed on-site to any design, and with improved thermal properties.
+	Another possible future application is in the use of 3D printers to create replacement organs for the
+	human body. This is known as bio-printing, and is an area of rapid development. You can learn
+	more on the bio-printing page, or see more in my bio-printing or the Future Visionsgallery.\par
+	
+	
+	\section{Rocket Engine}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s12.png}
+		\label{fig:3D-Printed Rocket Engine}
+		\caption{3D-Printed Rocket Engine}
+	\end{figure}
+	\noindent
+	\\NASA's first attempt at using 3D-printed parts for rocket engines has passed its biggest, and
+	hottest, test yet. The largest 3D-printed rocket part built to date, a rocket engine injector, survived a
+	major hot-fire test. The injector generated 10 times more thrust than any injector made by 3D
+	printing before, the space agency announced. A NASA video of the 3D-printed rocket part test
+	shows the engine blazing to life at the agency's Marshall Space Flight Center (MSFC) in Huntsville
+	Ala.\par
+	
+	\noindent
+	\\SpaceX's Dragon capsule has been takingcargo to the International Space Station since 2012.
+	Dragon V2 comes with new "SuperDraco" 16,000 lb-thrust engines that can be restarted multiple
+	times if necessary. In addition, the engines have the ability to deep throttle, providing astronauts
+	with precise control and enormous power.
+	The SuperDraco engine chamber is manufactured using 3D printing technology, the state-of-
+	the-art direct metal laser sintering (DMLS) which uses lasers to quickly manufacture high-quality
+	parts from metal powder layer by layer. The chamber is regeneratively cooled and printed in
+	Inconel, a high-performance superalloy that offers both high strength and toughness for increased
+	reliability. Fig.8.1 shows the image of the SuperDraco engine.\par
+	
+	\noindent
+	\\Totally eight SuperDraco engines built into the side walls of the Dragon spacecraft will
+	produce up to 120,000 pounds of axial thrust to carry astronauts to safety should an emergency
+	occur during launch. As a result, Dragon will be able to provide astronauts with the unprecedented
+	ability to escape from danger at any point during the ascent trajectory, not just in the first few
+	minutes.
+	In addition, the eight SuperDraco provide redundancy, so that even if one engine fails an
+	escape can still be carried out successfully.\par
+	
+	\section{3D Printing in Space}
+	\noindent
+	\\In one small step towards space manufacturing, NASA is sending a 3D printer to the
+	International Space Station. Astronauts will be able to make plastic objects of almost any shape they
+	like inside a box about the size of a microwave oven enabling them to print new parts to replace
+	broken ones, and perhaps even to invent useful tools.
+	The launch, slated for around September 19, will be the first time that a 3D printer flies in
+	space.The agency has already embraced ground-based 3D printing as a fast, cheap way to make
+	spacecraft parts, including rocket engine components that are being tested for its next generation of
+	heavy-lift launch vehicles. NASA hopes that the new capability will allow future explorers to make
+	spacecraft parts literally on the fly.\par
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[height=190pt,width=190pt]{/home/bramhani/Desktop/latexFiles/s13.png}
+		\label{fig:Made in space printer}
+		\caption{Made in space printer}
+	\end{figure}
+	\noindent
+	\\Space experts say that the promise of 3D printing is real, but a long way from the hype that
+	surrounds it. The printer selected by NASA was built by the company Made in Space, which is
+	based at a technology park next to NASA’s Ames Research Center in Moffett Field, California.
+	During the printer’s sojourn on the space station, it will create objects from a heat- sensitive plastic
+	that can be shaped when it reaches temperatures of about 225–250 °C.
+	\par
+	
+	\noindent
+	\\The team is keeping quiet about what type of object it plans to print first, but the general idea
+	is to fashion tools for use aboard the station. The Made in Space printer is also a testbed for
+	performance of the technology in near- zero gravity. The machines work by spraying individual
+	layers of a material that build up to form a complete, 3D object. But in near-weightless
+	environments, there is no gravitational pull to hold the material down.
+	\par
+	
+	
+	\noindent
+	\\Fig.8.2 shows the image of astronauts with Made in Space 3D printer. Made in Space is
+	looking at flying a second printer to the space station next year, incorporating design changes from
+	what is learned during the first flight. There is little point in manufacturing parts in space if they do
+	not work at least as well as spares that an astronaut might grab from a storage locker, Day notes.
+	\par
+	
+	\chapter*{Conclusion}
+	\addcontentsline{toc}{chapter}{Conclusion}
+	
+	\noindent
+	\\As the 3D printer is a device, it should be analysed with the advantages and disadvantages,
+	how the device can change the society and engineering etc in mind. The very nature of 3D printing,
+	creating a part layer by layer, instead of subtractive methods of manufacturing lend themselves to
+	lower costs in raw material. Instead of starting with a big chunk of plastic and carving away
+	(milling or turning) the surface in order to produce your product. Additive manufacturing only
+	"prints" what you want, where you want it. Other manufacturing techniques can be just as wasteful.
+	3D printing is the ultimate just-in-time method of manufacturing. No longer do you need a
+	warehouse full of inventory waiting for customers. Just have a 3D printer waiting to print your next
+	order. On top of that, you can also offer almost infinite design options and custom products. It
+	doesn't cost more to add a company logo to every product you have or let your customers pick
+	every feature on their next order, the sky is the limit with additive manufacturing.
+	\par
+	
+	\noindent
+	\\Whether you are designing tennis shoes or space shuttles, you can't just design whatever you
+	feel like, a good designer always take into account whether or not his design can be manufactured
+	cost effectively. Additive manufacturing open up your designs to a whole new level. Because
+	undercuts, complex geometry and thin walled parts are difficult to manufacture using traditional
+	methods, but are sometimes a piece of cake with 3D printing.
+	\par
+	
+	\noindent
+	\\In addition, the mathematics behind 3D printing are simpler than subtractive methods. For
+	instance, the blades on a centrifugal supercharger would require very difficult path planning using a
+	5-axis CNC machine. The same geometry using additive manufacturing techniques is very simple to
+	calculate, since each layer is analysed separately and 2D information is always simpler than 3D.
+	This mathematical difference, while hard to explain is the fundamental reason why 3D printing is
+	superior to other manufacturing techniques. 
+	\par
+	
+
+	
+	\chapter*{References}
+	\addcontentsline{toc}{chapter}{References}
+	\indent
+	\\\emph{[1] Isaac Budmen, “The Book on 3D Printing,” August 31, 2013.}\par
+	\indent
+	\\ \emph{[2] Christopher Barnatt, “3D Printing: The Next Industrial Revolution,” May 4, 2013.}\par
+	\indent
+	\\\emph{[3] Hod Lipson, “Fabricated: The New World of 3D Printing,” February 11, 2013.}\par
+	\indent
+	\\\emph{[4] David Burns, “Rapid Growth of Additive Manufacturing Disrupts Traditional Manufacturing Process Companies,”
+		November 7, 2012. [online]. Available:
+		https://www.ecnmag.com/article/2012/07/rapid-growth-additive-manufacturing-disrupts-traditional-manufacturing- process-companies}\par
+	\indent
+	\\\emph{[5]spilasers, “Additive Manufacturing,” 2018. [online]
+		Available: \\https://www.spilasers.com/application-additive-manufacturing/\\additive-manufacturing-a-definition/}\par
+	
+	\indent
+	\\\emph{[6]Digit, “The Future of 3D-Printing,” 2017. [online].
+		Availabe: \\https://www.digit.in/technology-guides/\\fasttrack-to-3d-printing/the-future-of-3d-printing.html}\par
+	\indent
+	\\\emph{[7]Strikwerda and Dehue, “The 3D-Printing Products,” last edited in 2019.\\
+		Available: www.3dprinting.com}\par
+\end{document}
